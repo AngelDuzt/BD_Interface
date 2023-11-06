@@ -13,5 +13,14 @@ jobs:
     steps:
     - name: Greeting
       run: echo "Hello, this is my crud interface script for PSQL"
-      
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    needs: [build]
+    
+    steps:
+    - name: Testing
+      run: echo "Test my code"
     
