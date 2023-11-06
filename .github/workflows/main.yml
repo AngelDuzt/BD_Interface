@@ -1,5 +1,9 @@
 name: BD_Interface
 
+env:
+  DATABASE_NAME: "PSQL"
+  VERSION: "of commit ${{ github.sha }}"
+
 on:
   push:
     branches: 
@@ -12,8 +16,10 @@ jobs:
 
     steps:
     - name: Greeting
-      run: echo "Hello, this is my crud interface script for PSQL"
-
+      run: echo "Hello, nice to meet you"
+    - name: Comment
+      run: echo "This is my crud interface script for ${{ env.DATABASE_NAME }}"
+  
   test:
 
     runs-on: ubuntu-latest
@@ -22,5 +28,5 @@ jobs:
     
     steps:
     - name: Testing
-      run: echo "Test my code"
+      run: echo "Test my code ${{  env.VERSION }}"
     
