@@ -1,0 +1,17 @@
+name: BD_Interface
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Greeting
+      run: echo "Hello, this is my crud interface script for PSQL"
+      
+    
