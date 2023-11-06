@@ -29,4 +29,7 @@ jobs:
     steps:
     - name: Testing
       run: echo "Test my code ${{  env.VERSION }}"
-    
+    - name: Git clone my repo
+      uses: actions/checkout@v1
+    - name: Folder
+      run: echo "which consist:" | ls -lah  
