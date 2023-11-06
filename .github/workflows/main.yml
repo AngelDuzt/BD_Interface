@@ -32,6 +32,10 @@ jobs:
     - name: Git clone my repo
       uses: actions/checkout@v1
     - name: Folder
-      run: echo "which consist:" | ls -lah
+      run: |
+        echo "which consists: "
+        ls -lah
     - name: Python version
-      run: echo "Py version is:" | python --version 
+      run: |
+        echo "Py version is:"
+        python --version 
