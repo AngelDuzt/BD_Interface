@@ -20,7 +20,7 @@ jobs:
     - name: Comment
       run: echo "This is my crud interface script for ${{ env.DATABASE_NAME }}"
   
-  test:
+  info:
 
     runs-on: ubuntu-latest
 
@@ -28,8 +28,10 @@ jobs:
     
     steps:
     - name: Testing
-      run: echo "Test my code ${{  env.VERSION }}"
+      run: echo "Code ${{  env.VERSION }}"
     - name: Git clone my repo
       uses: actions/checkout@v1
     - name: Folder
-      run: echo "which consist:" | ls -lah  
+      run: echo "which consist:" | ls -lah
+    - name: Python version
+      run: echo "Py version is:" | python --version 
