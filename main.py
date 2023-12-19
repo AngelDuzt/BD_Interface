@@ -3,6 +3,11 @@ import tkinter.font as tkFont
 
 import psycopg2
 
+import os
+
+if os.environ.get('DISPLAY', '') == '':
+   print('No display found. Using :0.0')
+os.environ.__setitem__('DISPLAY', ':0.0')
 
 def supprimer(id):
     conn = psycopg2.connect(host="127.0.0.1",
