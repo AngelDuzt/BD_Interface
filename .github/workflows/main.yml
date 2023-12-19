@@ -1,0 +1,41 @@
+name: BD_Interface
+
+env:
+  DATABASE_NAME: "PSQL"
+  VERSION: "of commit ${{ github.sha }}"
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Greeting
+      run: echo "Hello, nice to meet you"
+    - name: Comment
+      run: echo "This is my crud interface script for ${{ env.DATABASE_NAME }}"
+  
+  info:
+
+    runs-on: ubuntu-latest
+
+    needs: [build]
+    
+    steps:
+    - name: Testing
+      run: echo "Code ${{  env.VERSION }}"
+    - name: Git clone my repo
+      uses: actions/checkout@v1
+    - name: Folder
+      run: |
+        echo "which consists: "
+        ls -lah
+    - name: Python version
+      run: |
+        echo "Py version is:"
+        python --version 
